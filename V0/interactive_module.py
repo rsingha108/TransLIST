@@ -53,9 +53,10 @@ import argparse
 #import flair
 #import flair, torch
 #flair.device = torch.device('cpu') 
-lang_model_path = "../lang_model_sanskrit.pkl"
-with open(lang_model_path,'rb') as f:
-    language_model = pickle.load(f)
+
+#lang_model_path = "../lang_model_sanskrit.pkl"
+#with open(lang_model_path,'rb') as f:
+#    language_model = pickle.load(f)
    
 
 def mapper(a,b):
@@ -225,7 +226,7 @@ def constrained_inference(inp_data_i, pred_data_i, nodes):
 	words_l = [w[0] for k in tokens for w in tokens[k]]
 	
 	if len(set(p.split()) - set(words_l)) > 0: ## some subwords are missing in token
-		print("Operation start...")
+		#print("Operation start...")
 		abs_index = 0
 		for j in range(len(prll)): ## for every chunk
 		    #print("------------")
@@ -234,17 +235,17 @@ def constrained_inference(inp_data_i, pred_data_i, nodes):
 		        abs_index += 1
 		    #print("abs_index : ",abs_index)
 		    pred_j = prll[j]
-		    print("\npred_j : ",pred_j)
+		    #print("\npred_j : ",pred_j)
 		    tokens_j = [(t[0],(t[1][0]-abs_index,t[1][1]-abs_index)) for t in tokens[j]]
 		    
-		    print("tokens_j : ",tokens_j)
+		    #print("tokens_j : ",tokens_j)
 
 		    token_j_words = [tpl[0] for tpl in tokens_j]
 		    bad_chunk = 0 ## deafault : no
 		    for subw in pred_j:
 		        if subw not in token_j_words:
 		            bad_chunk = 1 # yes
-		    print("bad chunk : ", bad_chunk)
+		    #print("bad chunk : ", bad_chunk)
 		    if bad_chunk == 0 : continue
 		
 	#             size = max([t[1] for t in tokens_j.values()])+1
@@ -255,7 +256,7 @@ def constrained_inference(inp_data_i, pred_data_i, nodes):
 		    #print("size,chunk_len : ",size,chunk_len)
 		    #pwords = all_possible_words((0,size-1),tokens_j)
 		    pwords = all_possible_words((ref,size-1),tokens_j)
-		    print("pwords : ",pwords)
+		    #print("pwords : ",pwords)
 		    if len(pwords) == 0 : continue
 
 		    e_max = 0
@@ -281,7 +282,7 @@ def constrained_inference(inp_data_i, pred_data_i, nodes):
 		      
 		        energy /= len(w.split('_')) ## penalty fn 1
 		     
-		        perplexity = language_model.calculate_perplexity(w) # 1 ## to bypass LM
+		        perplexity = 1 #language_model.calculate_perplexity(w) # 1 ## to bypass LM
 
 		        e_p = energy/perplexity
 		        #print(w,energy,perplexity)
@@ -343,7 +344,7 @@ def _data_forward(func, x, _predict_func_wrapper):
 #============================== MAIN Function =================================#
 
 loader = ModelLoader()
-model = loader.load_pytorch_model('saved_models/best_normal')
+model = loader.load_pytorch_model('saved_models/best_sighum_shr2')
 #print("\nmodel loaded...\n")
 model.eval()
 
@@ -405,11 +406,12 @@ batch_x = {'target': bg, 'bigrams': bg, 'seq_len': torch.tensor([n]), 'lex_num':
          36, 36, 29, 18, 13,  2, 27, 34, 34, 39, 27, 17]])}
 
 """
-#batch_x = {'target': bg, 'bigrams': bg, 'seq_len': torch.tensor([n]), 'lex_num': torch.tensor([len(nodes)]), 'lattice': torch.tensor([ltc]), 'pos_s': torch.tensor([sti]), 'pos_e': torch.tensor([edi])}
+batch_x = {'target': bg, 'bigrams': bg, 'seq_len': torch.tensor([n]), 'lex_num': torch.tensor([len(nodes)]), 'lattice': torch.tensor([ltc]), 'pos_s': torch.tensor([sti]), 'pos_e': torch.tensor([edi])}
 
          
 #print(batch_x)
 
+"""
 batch_x = {'target': torch.tensor([[11, 13, 10, 59, 17,  2,  6,  3,  8, 11,  2, 12,  2, 10,  2,  6,  3, 15,
           7,  4, 15,  5, 45,  3, 25,  2,  8,  2, 10,  5, 30,  3, 17, 11, 37,  5,
          20, 16,  4,  7,  9,  5,  2,  6]]), 'bigrams': torch.tensor([[104,  92, 181, 229,  55,   7,   4,  24, 150,   3,  13,  17,  15,  14,
@@ -442,7 +444,7 @@ batch_x = {'target': torch.tensor([[11, 13, 10, 59, 17,  2,  6,  3,  8, 11,  2, 
          13, 41, 43, 43, 42,  3, 37, 14, 39, 43, 40, 30, 34, 34, 28, 13, 34,  2,
          22,  1,  2, 14, 13, 43,  2,  1,  6, 10, 12,  3,  5, 38,  2, 27,  2, 26,
          42, 27]])}
-
+"""
        
 
 #pred dict :  {'pred': tensor([[13,  5,  2,  5,  3, 19, 35, 10, 11,  2,  5,  3, 19,  2,  3, 16, 43,  7,
@@ -523,11 +525,11 @@ See constrained_inference.py
 """
 #print("\nModel Output : ", ''.join(preds)) ## '_' separated
 
-print("inp_data_i : ", inp_data_i)
-print("pred_data_i : ", pred_data_i)
+print("\ninp_data_i : ", inp_data_i)
+print("\nModel prediction : ", pred_data_i)
 
 ci_pred = constrained_inference(inp_data_i, pred_data_i, nodes)
 
 #print(f"final pred : <start>{ci_pred}<end>\n")
-print(ci_pred)
+print("\nFinal Segmentation : ",ci_pred)
 

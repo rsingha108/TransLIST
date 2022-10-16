@@ -6,19 +6,36 @@ import networkx as nx
 import pickle
 import difflib
 import random
-
 import flair, torch
 flair.device = torch.device('cpu') 
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--dataset', type=str, required=True)
+args = parser.parse_args()
+dataset = args.dataset
+
+
+
+#dataset = 'hackathon' ## 'hackathon' or 'sighum'
 
 test_data_path = 'sktWS/skt.test'
-test_pred_path = 'test_predictions_flat_lattice.txt' ## automatically updates by running flat_main_bigram.py
-label_vocab_path = 'V0/label_vocab.pkl' ## automatically updates by running flat_main_bigram.py
-test_logits_path = 'test_logits_FL.pkl' ## automatically updates by running flat_main_bigram.py
+test_pred_path = 'test_predictions_flat_lattice.txt' 
+label_vocab_path = 'V0/label_vocab.pkl' 
+test_logits_path = 'test_logits_FL.pkl' 
 lang_model_path = "lang_model_sanskrit.pkl"
-lrec_data_path =  'LREC-Data/Hackathon_dcs.csv' #"Hackathon_data/hack_LREC_test_proper_dcs.csv"
-graphml_path =  "Hackathon_data/final_graphml_test" #'skt/After_graphml' #"Hackathon_data/final_graphml_test"  #
-pos_correct = True
+pos_correct = False
+
+if dataset == 'hackathon':
+	lrec_data_path =  'LREC-Data/Hackathon_dcs.csv' 
+	graphml_path =  "Hackathon_data/final_graphml_test"
+	pos_correct = True
+	
+elif dataset == 'sighum':
+	lrec_data_path =  'LREC-Data/new_LREC_data_complete.csv'
+	graphml_path =  'skt/After_graphml'
+
+
 
 enable_lang_model = False
 enable_penalty = True

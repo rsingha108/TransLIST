@@ -50,6 +50,7 @@ from utils import print_info
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--status',default='train',choices=['train','test'])
+parser.add_argument('--test_model', type=str, default='best_sighum_shr2')
 parser.add_argument('--msg',default='_')
 parser.add_argument('--train_clip',default=False,help='是不是要把train的char长度限制在200以内')
 parser.add_argument('--device', default='0')
@@ -78,7 +79,7 @@ parser.add_argument('--word_min_freq',default=1,type=int)
 # hyper of training
 # parser.add_argument('--early_stop',default=40,type=int)
 parser.add_argument('--epoch', default=100, type=int)
-parser.add_argument('--batch', default=8, type=int)
+parser.add_argument('--batch', default=4, type=int)
 parser.add_argument('--optim', default='sgd', help='sgd|adam')
 parser.add_argument('--lr', default=1e-3, type=float)
 parser.add_argument('--embed_lr_rate',default=1,type=float)
@@ -154,6 +155,9 @@ parser.add_argument('--abs_pos_fusion_func',default='nonlinear_add',
 parser.add_argument('--dataset', default='weibo', help='weibo|resume|ontonote|msra')
 
 args = parser.parse_args()
+
+test_model = args.test_model
+
 if args.ff_dropout_2 < 0:
     args.ff_dropout_2 = args.ff_dropout
 
@@ -658,7 +662,7 @@ if args.status == 'train':
 elif args.status == 'test':
     print('GOING TO TEST !!!')
     loader = ModelLoader()
-    model = loader.load_pytorch_model('saved_models/best_hack_shr2')
+    model = loader.load_pytorch_model(f'saved_models/{test_model}')
     tester = Tester(datasets['test'], model, metrics, batch_size=1, device=device, status='test')
     tester.test()
 
