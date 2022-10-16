@@ -57,6 +57,7 @@ So, total 4 settings...
 
 
 1. Training "SIGHUM Translist Ngram" : 
+	
 	Run ```bash train_sighum_ngram.sh [PATH to your conda environments]``` or do manually...
 	- In sktWS place SIGHUM data ( from root/sktWS dir run : ```cp SIGHUM/* .``` )
 	- tlat0/.../fastNLP/core/dataset.py : line 310 : ```setting = "sighum-ngram"```
@@ -67,6 +68,7 @@ So, total 4 settings...
 	- rename saved model in V0/saved_model
 
 2. Training "SIGHUM Translist SHR"
+	
 	Run ```bash train_sighum_shr.sh [PATH to your conda environments]``` or do manually...
 	- In sktWS place SIGHUM data ( from root/sktWS dir run : ```cp SIGHUM/* .``` )
 	- tlat0/.../fastNLP/core/dataset.py : line 310 : ```setting = "sighum-shr"```
@@ -77,6 +79,7 @@ So, total 4 settings...
 	- rename saved model in V0/saved_model
 	
 3. Training "Hackathon Translist Ngram"
+	
 	Run ```bash train_hack_ngram.sh [PATH to your conda environments]``` or do manually...
 	- In sktWS place Hackathon data ( from root/sktWS dir run : ```cp hackathon/* .``` )
 	- tlat0/.../fastNLP/core/dataset.py : line 310 : ```setting = "hack-ngram"```
@@ -87,6 +90,7 @@ So, total 4 settings...
 	- rename saved model in V0/saved_model
 
 4. Training "Hackathon Translist SHR"
+	
 	Run ```bash train_hack_shr.sh [PATH to your conda environments]``` or do manually...
 	- In sktWS place Hackathon data ( from root/sktWS dir run : ```cp hackathon/* .``` )
 	- tlat0/.../fastNLP/core/dataset.py : line 310 : ```setting = "hack-shr"```
