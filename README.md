@@ -104,20 +104,24 @@ So, total 4 settings...
 ## Inference 
 
 1. Testing "SIGHUM Translist Ngram" :
-		- from V0 run ```python flat_main_bigram.py --status test --test_model best_sighum_ngram2```
-		- don't run CI (not applicable in this case)
+	
+	- from V0 run ```python flat_main_bigram.py --status test --test_model best_sighum_ngram2```
+	- don't run CI (not applicable in this case)
     
 2. Testing "SIGHUM Translist SHR" :
-		- from V0 run ```python flat_main_bigram.py --status test --test_model best_sighum_shr2```
-		- run CI : ```python constrained_inference.py --dataset sighum```
+	
+	- from V0 run ```python flat_main_bigram.py --status test --test_model best_sighum_shr2```
+	- run CI : ```python constrained_inference.py --dataset sighum```
 
 3. Testing "Hackathon Translist Ngram" :
-		- from V0 run ```python flat_main_bigram.py --status test --test_model best_hack_ngram2```
-		- don't run CI (not applicable in this case)
+	
+	- from V0 run ```python flat_main_bigram.py --status test --test_model best_hack_ngram2```
+	- don't run CI (not applicable in this case)
     
 4. Testing "Hackathon Translist SHR" :
-		- from V0 run ```python flat_main_bigram.py --status test --test_model best_hack_shr2```
-		- run CI : ```python constrained_inference.py --dataset hackathon``` 
+	
+	- from V0 run ```python flat_main_bigram.py --status test --test_model best_hack_shr2```
+	- run CI : ```python constrained_inference.py --dataset hackathon``` 
 
 		
 ## Interactive Mode 
