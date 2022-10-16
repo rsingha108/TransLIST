@@ -38,7 +38,7 @@ Download zip files from the above link and keep them in proper place.
 5. **Hack_Lattices.zip** : unzip and get 'hack_ngram_lattice_files' & 'hack_shr_lattice_files' folders, keep both in root directory.
 6. **Hackathon_data.zip** : unzip and get 'embeds', 'final_graphml_dev', 'final_graphml_test', 'final_graphml_train' folders, keep them inside "root/Hackathon_data" directory.
 7. **sktWS.zip** : unzip and get 'sktWS' folder, keep in root directory.
-8. **saved_models.zip** : unzip and get 'saved_models' folder and keep inside "root/V0" directory.
+8. **saved_models.zip** : unzip and get 4 models (best_sighum_shr2, best_sighum_ngram2, best_hack_shr2, best_hack_ngram2) and keep inside "root/V0/saved_model" directory.
 
 ## How to train Models?
 
