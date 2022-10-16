@@ -105,21 +105,25 @@ So, total 4 settings...
 
 1. Testing "SIGHUM Translist Ngram" :
 	
+	Run ```bash train_sighum_ngram.sh [PATH to your conda environments]```
 	- from V0 run ```python flat_main_bigram.py --status test --test_model best_sighum_ngram2```
 	- don't run CI (not applicable in this case)
     
 2. Testing "SIGHUM Translist SHR" :
 	
+	Run ```bash train_sighum_shr.sh [PATH to your conda environments]```
 	- from V0 run ```python flat_main_bigram.py --status test --test_model best_sighum_shr2```
 	- run CI : ```python constrained_inference.py --dataset sighum```
 
 3. Testing "Hackathon Translist Ngram" :
 	
+	Run ```bash train_hack_ngram.sh [PATH to your conda environments]```
 	- from V0 run ```python flat_main_bigram.py --status test --test_model best_hack_ngram2```
 	- don't run CI (not applicable in this case)
     
 4. Testing "Hackathon Translist SHR" :
 	
+	Run ```bash train_hack_shr.sh [PATH to your conda environments]```
 	- from V0 run ```python flat_main_bigram.py --status test --test_model best_hack_shr2```
 	- run CI : ```python constrained_inference.py --dataset hackathon``` 
 
