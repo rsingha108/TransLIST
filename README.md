@@ -16,7 +16,7 @@ Or do it manually :
   * conda env create -f tlat0.yml
   * conda activate tlat0
 
-Replace the files 'tester.py', 'dataset.py', 'metric.py' and 'crf.py' as per the files given in "fastnlp-copy" directory inside the root directory.
+Replace the files 'tester.py', 'dataset.py', 'metrics.py' and 'crf.py' as per the files given in "fastnlp-copy" directory inside the root directory.
 
 * Paths : 
   * tlat0/lib/python3.7/site-packages/fastNLP/core --> 'tester.py', 'dataset.py', 'metric.py'
