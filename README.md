@@ -8,13 +8,13 @@ Link to paper : [need to provide link]
 * Pytorch 1.5.0
 * CUDA 10.2
 
-Run bash ```bash requirements.sh [PATH to your conda environments]``` (e.g. ~/anaconda3/envs)
-
-Or do it manually :
-
 * Create an environment using the tlat0.yml file given in the root directory.
   * conda env create -f tlat0.yml
   * conda activate tlat0
+
+Now Run bash ```bash requirements.sh [PATH to your conda environments]``` (e.g. ~/anaconda3/envs)
+
+Or do it manually :
 
 Replace the files 'tester.py', 'dataset.py', 'metrics.py' and 'crf.py' as per the files given in "fastnlp-copy" directory inside the root directory.
 
