@@ -19,7 +19,7 @@ Or do it manually :
 Replace the files 'tester.py', 'dataset.py', 'metrics.py' and 'crf.py' as per the files given in "fastnlp-copy" directory inside the root directory.
 
 * Paths : 
-  * tlat0/lib/python3.7/site-packages/fastNLP/core --> 'tester.py', 'dataset.py', 'metric.py'
+  * tlat0/lib/python3.7/site-packages/fastNLP/core --> 'tester.py', 'dataset.py', 'metrics.py'
   * tlat0/lib/python3.7/site-packages/fastNLP/modules/decoder --> 'crf.py'
   
  
