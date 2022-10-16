@@ -795,12 +795,12 @@ class DataSet(object):
         extra_flag = 0
         if(hasattr(func,'keywords')):
             if(list(func.keywords.keys())[0]=='w_trie'):
-            	if setting == 'sighum-ngram' or 'sighum-shr':
-            		df = pandas.read_csv("../LREC-Data/new_LREC_data_complete.csv")
-            	elif setting == 'hack-ngram' :
-            		df = pandas.read_csv("../LREC-Data/hack_LREC_data_complete.csv")
-            	elif setting == 'hack-shr':
-                	df = pandas.read_csv("../LREC-Data/Hackathon_dcs.csv")
+                if setting == 'sighum-ngram' or 'sighum-shr':
+                    df = pandas.read_csv("../LREC-Data/new_LREC_data_complete.csv")
+                elif setting == 'hack-ngram' :
+                    df = pandas.read_csv("../LREC-Data/hack_LREC_data_complete.csv")
+                elif setting == 'hack-shr':
+                    df = pandas.read_csv("../LREC-Data/Hackathon_dcs.csv")
                 extra_conn_inputs = df['input'].tolist()
                 extra_conn_dcs = df['DCS-ID'].tolist()
                 extra_flag=1
@@ -814,27 +814,27 @@ class DataSet(object):
                 if(extra_flag):
                   
                     if setting == 'sighum-ngram':
-                    	dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']).replace('_',' '))]) ## for new_LREC
-                    	path_to_lattice = '../ngram_lattice_files/'+dcs_id_str+'.lat'
-                    	
+                        dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']).replace('_',' '))]) ## for new_LREC
+                        path_to_lattice = '../ngram_lattice_files/'+dcs_id_str+'.lat'
+                        
                     elif setting == 'sighum-shr':
-                    	dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']).replace('_',' '))]) ## for new_LREC
-                    	path_to_lattice = '../lattice_files/'+dcs_id_str+'.lat'
-                    	
+                        dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']).replace('_',' '))]) ## for new_LREC
+                        path_to_lattice = '../lattice_files/'+dcs_id_str+'.lat'
+                        
                     elif setting == 'hack-ngram':
-                    	if ''.join(ins['chars']) in extra_conn_inputs:
-		                	dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']))]) ## for hack_LREC...
-		                else:
-		                	dcs_id_str = 'not_found'
-                    	path_to_lattice = '../hack_ngram_lattice_files/'+dcs_id_str+'.lat'
-                    	
+                        if ''.join(ins['chars']) in extra_conn_inputs:
+                            dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']))]) ## for hack_LREC...
+                        else:
+                            dcs_id_str = 'not_found'
+                        path_to_lattice = '../hack_ngram_lattice_files/'+dcs_id_str+'.lat'
+                        	
                     elif setting == 'hack-shr':
-                    	if ''.join(ins['chars']) in extra_conn_inputs:
-		                	dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']).replace('_',' '))]) ## for Hackathon_dcs.csv.
-		                else:
-		                	dcs_id_str = 'not_found'
-                    	path_to_lattice = '../hack_shr_lattice_files/'+dcs_id_str+'.lat'
-                    	
+                        if ''.join(ins['chars']) in extra_conn_inputs:
+                            dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']).replace('_',' '))]) ## for Hackathon_dcs.csv.
+                        else:
+                            dcs_id_str = 'not_found'
+                        path_to_lattice = '../hack_shr_lattice_files/'+dcs_id_str+'.lat'
+                        	
                     if(os.path.exists(path_to_lattice)):
                         add_conn = pandas.read_csv(path_to_lattice)
                         temp1 = add_conn.values.tolist()#func(ins[field_name]) + add_conn.values.tolist()
