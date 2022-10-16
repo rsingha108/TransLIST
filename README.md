@@ -50,7 +50,7 @@ So, total 4 settings...
 
 1. Training "SIGHUM Translist Ngram" : 
 	- In sktWS place SIGHUM data ( from root/sktWS dir run : ```cp SIGHUM/* .``` )
-	- tlat/.../fastNLP/core/dataset.py : line 310 : ```setting = "sighum-ngram"```
+	- tlat0/.../fastNLP/core/dataset.py : line 310 : ```setting = "sighum-ngram"```
 	- use the embeds in the SIGHUM_embeds folder. (from root dir run : ```cp SIGHUM_embeds/* .```)
 	- from V0 directory run : ```python flat_main_bigram.py --status train --batch 4``` (in a tmux session)
 	- rename saved model in V0/saved_model
@@ -58,7 +58,7 @@ So, total 4 settings...
 2. Training "SIGHUM Translist SHR"
 
 	- In sktWS place SIGHUM data ( from root/sktWS dir run : ```cp SIGHUM/* .``` )
-	- tlat/.../fastNLP/core/dataset.py : line 310 : ```setting = "sighum-shr"```
+	- tlat0/.../fastNLP/core/dataset.py : line 310 : ```setting = "sighum-shr"```
 	- use the embeds in the SIGHUM_embeds folder. (from root dir run : ```cp SIGHUM_embeds/* .```)
 	- from V0 directory run : ```python flat_main_bigram.py --status train --batch 8``` (in a tmux session)
 	- rename saved model in V0/saved_model
@@ -66,7 +66,7 @@ So, total 4 settings...
 3. Training "Hackathon Translist Ngram"
 
 	- In sktWS place Hackathon data ( from root/sktWS dir run : ```cp hackathon/* .``` )
-	- tlat/.../fastNLP/core/dataset.py : line 310 : ```setting = "hack-ngram"```
+	- tlat0/.../fastNLP/core/dataset.py : line 310 : ```setting = "hack-ngram"```
 	- use the embeds in the Hackathon_data/embeds folder. (from root dir run : ```cp Hackathon_data/embeds/* .```)
 	- from V0 directory run : ```python flat_main_bigram.py --status train --batch 4``` (in a tmux session)
 	- rename saved model in V0/saved_model
@@ -74,7 +74,7 @@ So, total 4 settings...
 4. Training "Hackathon Translist SHR"
 
 	- In sktWS place Hackathon data ( from root/sktWS dir run : ```cp hackathon/* .``` )
-	- tlat/.../fastNLP/core/dataset.py : line 310 : ```setting = "hack-shr"```
+	- tlat0/.../fastNLP/core/dataset.py : line 310 : ```setting = "hack-shr"```
 	- use the embeds in the Hackathon_data/embeds folder. (from root dir run : ```cp Hackathon_data/embeds/* .```)
 	- from V0 directory run : ```python flat_main_bigram.py --status train --batch 8``` (in a tmux session)
 	- rename saved model in V0/saved_model
