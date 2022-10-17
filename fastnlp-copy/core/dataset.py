@@ -795,7 +795,7 @@ class DataSet(object):
         extra_flag = 0
         if(hasattr(func,'keywords')):
             if(list(func.keywords.keys())[0]=='w_trie'):
-                if setting == 'sighum-ngram' or 'sighum-shr':
+                if (setting == 'sighum-ngram') or (setting == 'sighum-shr'):
                     df = pandas.read_csv("../LREC-Data/new_LREC_data_complete.csv")
                 elif setting == 'hack-ngram' :
                     df = pandas.read_csv("../LREC-Data/hack_LREC_data_complete.csv")
