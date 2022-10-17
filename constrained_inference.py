@@ -30,14 +30,14 @@ if dataset == 'hackathon':
 	lrec_data_path =  'LREC-Data/Hackathon_dcs.csv' 
 	graphml_path =  "Hackathon_data/final_graphml_test"
 	pos_correct = True
+	enable_lang_model = False
 	
 elif dataset == 'sighum':
 	lrec_data_path =  'LREC-Data/new_LREC_data_complete.csv'
 	graphml_path =  'skt/After_graphml'
+	enable_lang_model = True
 
 
-
-enable_lang_model = False
 enable_penalty = True
 enable_translat_voting = True
 
