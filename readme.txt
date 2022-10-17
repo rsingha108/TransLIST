@@ -2,76 +2,10 @@ Steps to reproduce results :
 
 fastNLP path : home/jivnesh/anaconda3/envs/tlat0/lib/python3.7/site-packages/fastNLP/
 
-1. SIHGUM Translist-SHR : 
-
-	- V0/flat_main_bigram.py : use the model "best_normal" for testing
-	- In sktWS place SIGHUM data (all 3 datasets are within sktWS)
-	- fastNLP/core/dataset.py : new_LREC_data_complete.csv, lattice_files; in line 808-814 --> choose the correct code for hack_LREC... or new_LREC...
-	- use the embeds in the SIGHUM_embeds folder. (just put them in TransLat-main)
-	- from V0 directory run : "python flat_main_bigram.py --status test" (may take upto 15 mins in the beginning...)
-	- then "cd .." and run "python constrained_inference.py" [in constrained_inference.py choose correct LREC_path and graphmls for Hackathon or SIGHUM]
-	- Result :
-		Accuracy: 0.9357142857142857
-		Precision: 98.57927908731483
-		Recall: 98.80673271833986
-		F1_score: 98.69287485211663
-		
-
-2. SIGHUM Translist-Ngram :
-
-	- V0/flat_main_bigram.py : use the model "best_ngram_lattice" for testing
-	- In sktWS place SIGHUM data (all 3 datasets are within sktWS)
-	- fastNLP/core/dataset.py : new_LREC_data_complete.csv, ngram_lattice_files; in line 808-814 --> choose the correct code for hack_LREC... or new_LREC...
-	- use the embeds in the SIGHUM_embeds folder. (just put them in TransLat-main)
-	- from V0 directory run : "python flat_main_bigram.py --status test"
-	- don't run CI
-	- Result :
-		Accuracy: 86.88095238095238
-		Precision: 97.03351496387211
-		Recall: 96.98253753521612
-		F1_score: 97.00801955242241
-
-
-3. Hackathon Translist-Ngram : 
-
-	- V0/flat_main_bigram.py : use the model "best_ngram_hackathon" for testing
-	- In sktWS place Hackathon data (all 3 datasets are within sktWS)
-	- fastNLP/core/dataset.py : hack_LREC_data_complete.csv, hack_ngram_lattice_files; in line 808-814 --> choose the correct code for hack_LREC... or new_LREC...
-	- use the embeds in the Hackathon_data folder. (just put them in TransLat-main)
-	- from V0 directory run : "python flat_main_bigram.py --status test"
-	- don't run CI
-	- Result :
-		Accuracy: 78.85599598595083
-		Precision: 96.68814503356143
-		Recall: 95.61324809176112
-		F1_score: 96.1476924153259
-
-	
-4. Hackathon Translist-SHR : 
-
-	- find 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
--------------------------------------------------------------------------------------------------------------------------------------------------
-to do :
 
 conda activate tlat0
 cd /media/guest/rathin_workspace/TranLat-main/V0
 
-1. need to retrain all 
 
 1.1 Training "SIGHUM Translist Ngram" : 
 
@@ -170,11 +104,6 @@ cd /media/guest/rathin_workspace/TranLat-main/V0
 		Accuracy: 0.8547917711991971
 
 
-2. run Hack-SHR model - generate lattices, LREC csv is : Hackathon_dcs.csv
-
-	- use Hackathon Graphmls and graphml_fixer to produce lattices (done)
-	
-	- for CI, use graphmls and purify them (position and chunk_no attribute) with a modified version of graphml_fixer --> position_corrector
 
 
 
