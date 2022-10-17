@@ -50,7 +50,7 @@ from utils import print_info
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--status',default='train',choices=['train','test'])
-parser.add_argument('--test_model', type=str, default='best_sighum_shr2')
+parser.add_argument('--test_model')
 parser.add_argument('--msg',default='_')
 parser.add_argument('--train_clip',default=False,help='是不是要把train的char长度限制在200以内')
 parser.add_argument('--device', default='0')
