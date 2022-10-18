@@ -112,12 +112,12 @@ def getdatafromsite(inputsent, new_path, coding = 'SLP'):  # Scrapping data from
     s_c = s_d.replace(" ", "+")
     # for utilising the sanskrit heritage app, the url has been specified
 
-    #urlname = ("http://sanskrit.inria.fr/cgi-bin/SKT/sktgraph.cgi?lex=SH&st=t&us=f&cp=t&text=" + s_c + "&t=" + s_type[inputtype] + "&topic=&mode=g&corpmode=&corpdir=&sentno=")
-    urlname = ("http://172.29.92.176/cgi-bin/Heritage_Platform/sktgraph.cgi?lex=SH&st=t&us=f&cp=t&text=" + s_c + "&t=" + s_type[inputtype] + "&topic=&mode=g&corpmode=&corpdir=&sentno=")
+    urlname = ("http://sanskrit.inria.fr/cgi-bin/SKT/sktgraph.cgi?lex=SH&st=t&us=f&cp=t&text=" + s_c + "&t=" + s_type[inputtype] + "&topic=&mode=g&corpmode=&corpdir=&sentno=")
+    #urlname = ("http://172.29.92.176/cgi-bin/Heritage_Platform/sktgraph.cgi?lex=SH&st=t&us=f&cp=t&text=" + s_c + "&t=" + s_type[inputtype] + "&topic=&mode=g&corpmode=&corpdir=&sentno=")
 
 #    urlname = ("http://localhost/cgi-bin/SKT/sktgraph.cgi?lex=SH&st=t&us=f&cp=t&text=" + s_c + "&t=" + s_type[inputtype] + "&topic=&mode=g&corpmode=&corpdir=&sentno=")
 
-    #print(urlname)
+    print(urlname)
     try:
         page = requests.get(urlname, timeout = 15.0)
     except Timeout:
@@ -350,8 +350,8 @@ nodes = check_graphml(graphml_file_name)
 tpls = []
 for node in nodes:
 	k,d = node
-	#w = iast2slp.convert(d['word'])
-	w = dev2slp.convert(d['word'])
+	w = iast2slp.convert(d['word']) ## for web-based scrapper
+	#w = dev2slp.convert(d['word']) ## for local scrapper
 	s = d['char_pos']
 	e = s + len(w) - 1
 	## need to add chunk number also
