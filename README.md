@@ -15,6 +15,11 @@ Create an environment using the `tlat0.yml` file given in the root directory.
  conda activate tlat0
  bash requirements.sh [PATH to your conda environments] (e.g. ~/anaconda3/envs)
  ```
+In case you are not able to run `requirements.sh`; complete the followings steps manually. Replace the files `tester.py`, `dataset.py`, `metrics.py` and `crf.py` as per the files given in `fastnlp-copy` directory inside the root directory. You can find the paths of these files at:
+```
+tlat0/lib/python3.7/site-packages/fastNLP/core --> 'tester.py', 'dataset.py', 'metrics.py'
+tlat0/lib/python3.7/site-packages/fastNLP/modules/decoder --> 'crf.py'
+```
 
 ## Datasets
 We have used two datasets: (1) [`SIGHUM`](https://zenodo.org/record/803508#.YRdZ43UzaXJ) (2) [`Hackathon`](https://sanskritpanini.github.io/dataset.html)
