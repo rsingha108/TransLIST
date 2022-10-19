@@ -89,7 +89,7 @@ Note that we also call our `Path Ranking for Corrupted Predictions (PRCP)` modul
 	
 	Run ```bash set_sighum_shr.sh [PATH to your conda environments]```
 	- From V0 run ```python flat_main_bigram.py --status test --test_model best_sighum_shr2```
-	- Run CI : ```python constrained_inference.py --dataset sighum```
+	- Run CI from root dir : ```python constrained_inference.py --dataset sighum```
 
 3. Testing "Hackathon Translist Ngram" :
 	
@@ -101,7 +101,7 @@ Note that we also call our `Path Ranking for Corrupted Predictions (PRCP)` modul
 	
 	Run ```bash set_hack_shr.sh [PATH to your conda environments]```
 	- From V0 run ```python flat_main_bigram.py --status test --test_model best_hack_shr2```
-	- run CI : ```python constrained_inference.py --dataset hackathon``` 
+	- run CI from root dir : ```python constrained_inference.py --dataset hackathon``` 
 
 		
 ## Interactive Mode 
