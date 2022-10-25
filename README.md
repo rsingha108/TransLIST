@@ -1,6 +1,6 @@
 # TransLIST : A Transformer-Based Linguistically Informed Sanskrit Tokenizer
 
-Official code for the paper ["TransLIST : A Transformer-Based Linguistically Informed Sanskrit Tokenizer](). If you use this code please cite our paper.
+Official code for the paper ["TransLIST : A Transformer-Based Linguistically Informed Sanskrit Tokenizer](https://arxiv.org/abs/2210.11753). If you use this code please cite our paper.
 
 ## Requirements
 * Python 3.7.3
@@ -123,17 +123,15 @@ Final Segmentation :  aham sOBa pateH senAm AyasEH BujagEH iva
 ## Citation
 If you use our tool, we'd appreciate if you cite our paper:
 ```
-@inproceedings{sandhan-etal-2022-novel,
-    title = "A Novel Multi-Task Learning Approach for Context-Sensitive Compound Type Identification in {S}anskrit",
-    author = "Sandhan, Jivnesh  and Gupta, Ashish  and Terdalkar, Hrishikesh  and Sandhan, Tushar  and Samanta, Suvendu  and Behera, Laxmidhar  and Goyal, Pawan",
-    booktitle = "Proceedings of the 29th International Conference on Computational Linguistics",
-    month = oct,
-    year = "2022",
-    address = "Gyeongju, Republic of Korea",
-    publisher = "International Committee on Computational Linguistics",
-    url = "https://aclanthology.org/2022.coling-1.358",
-    pages = "4071--4083",
-    abstract = "",
+@misc{sandhan_TransLIST,
+  doi = {10.48550/ARXIV.2210.11753},
+  url = {https://arxiv.org/abs/2210.11753},
+  author = {Sandhan, Jivnesh and Singha, Rathin and Rao, Narein and Samanta, Suvendu and Behera, Laxmidhar and Goyal, Pawan},
+  keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title = {TransLIST: A Transformer-Based Linguistically Informed Sanskrit Tokenizer},
+  publisher = {arXiv},
+  year = {2022},
+  copyright = {Creative Commons Attribution 4.0 International}
 }
 ```
 
@@ -143,4 +141,4 @@ This project is licensed under the terms of the `Apache license 2.0`.
 
 
 ## Acknowledgements
-We build our system on top of codebase released of [Flat-Lattice](https://github.com/LeeSureman/Flat-Lattice-Transformer).
+We build our system on top of the codebase released by [Flat-Lattice](https://github.com/LeeSureman/Flat-Lattice-Transformer).
